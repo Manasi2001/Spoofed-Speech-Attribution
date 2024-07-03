@@ -26,11 +26,11 @@ python download_dataset.py
 (Alternative) Manual preparation is available via 
 - ASVspoof2019 dataset: https://datashare.ed.ac.uk/handle/10283/3336
   1. Download `LA.zip` and unzip it.
-  2. Set the dataset directory in the configuration file.
+  2. Set the dataset directory in the configuration file `config/AASIST.conf`.
 
 ## Phase I
 
-### Inference Embedding Extraction
+### 1. Inference Embedding Extraction
 
 The binary output layer of the AASIST model is stripped and the remaining architecture is used to produce 160-dimensional embeddings for all the audios in training, development and evaluation sets.
 
@@ -42,3 +42,14 @@ python inference_embedding_extraction.py
 
 A set of embeddings is available in `Embeddings/AASIST/` for further use. 
 
+### 2. Designing Probabilistic Feature Detectors
+
+The ASVSpoof 2019 dataset provides detailed metadata about the characteristics of each spoofing attack by organizing the spoofing methods into seven _attribute sets_: Input, Input Processor, Duration, Conversion, Speaker Representation, Output, and Waveform Generation. Probabilistic detectors are designed for each of these attribute sets such that they take the 160-dimensional "raw" AASIST embedding as their (shared) input, and are trained to predict probabilistic scores for assessing the absence or presence of attributes associated with each spoofing attack algorithm.
+
+To design a probabilistic feature detector for an attribute set:
+
+```
+python emb_main.py
+```
+
+The attribute set number, model architecture for probabilistic feature detector, and related parameters can be set in the configuration file `emb_model_AASIST.conf`. Experimentation shows that a two-layered neural network architecture with 64 and 32 neurons in the hidden layers, respectively, seems to outperform the other tested architectures with one hidden layer of 0, 4, 8, 32 or 64 neurons, and suits best for all the attribute sets. A set of trained probabilistic feature detectors is available in `probabilistic_detectors/` for further use.
