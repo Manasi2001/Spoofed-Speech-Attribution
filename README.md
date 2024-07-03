@@ -27,3 +27,18 @@ python download_dataset.py
 - ASVspoof2019 dataset: https://datashare.ed.ac.uk/handle/10283/3336
   1. Download `LA.zip` and unzip it.
   2. Set the dataset directory in the configuration file.
+
+## Phase I
+
+### Inference Embedding Extraction
+
+The binary output layer of the AASIST model is stripped and the remaining architecture is used to produce 160-dimensional embeddings for all the audios in training, development and evaluation sets.
+
+To extract AASIST embeddings:
+
+```
+python inference_embedding_extraction.py
+```
+
+A set of embeddings is available in `Embeddings/AASIST/` for further use. 
+
