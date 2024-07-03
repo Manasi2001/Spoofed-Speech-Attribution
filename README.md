@@ -1,7 +1,6 @@
 # Spoofed Speech Attribution
 
-This repository focuses on extending the functionality of the ['AASIST: Audio Anti-Spoofing using Integrated Spectro-Temporal Graph Attention Networks'](https://arxiv.org/abs/2110.01200)
- model to predict attributes that characterize spoofed speech. The approach introduces a bank of probabilistic detectors that are trained to identify specific features associated with selected spoofing techniques. This results in a comprehensive attribute-based representation of each audio sample. This representation is then analyzed using decision tree modeling to enable accurate spoofed speech detection and detailed explanations for the model's decisions. The dataset selected for the experiments is LA scenario of ASVSpoof 2019.
+This repository focuses on extending the functionality of the ['AASIST: Audio Anti-Spoofing using Integrated Spectro-Temporal Graph Attention Networks'](https://arxiv.org/abs/2110.01200) [1] model to predict attributes that characterize spoofed speech. The approach introduces a bank of probabilistic detectors that are trained to identify specific features associated with selected spoofing techniques. This results in a comprehensive attribute-based representation of each audio sample. This representation is then analyzed using decision tree modeling to enable accurate spoofed speech detection and detailed explanations for the model's decisions. The dataset selected for the experiments is LA scenario of ASVSpoof 2019.
 
 ![full_arch](https://github.com/Manasi2001/Spoofed-Speech-Attribution/assets/68627617/1478fe33-27e8-4814-8c3e-09cceed162cf)
 
@@ -81,7 +80,7 @@ python decision_tree.py --BonafideSpoof
 - Spoofing attack algorithm attribution:
 
 ```
-python3 decision_tree.py --SpoofAttacks
+python decision_tree.py --SpoofAttacks
 ```
 
 Results are stored in `decision_tree_results/`. Relative paths of the dataframes and the maximum depth of decision tree, can be set in the configuration file `emb_model_AASIST.conf`.
@@ -89,5 +88,54 @@ Results are stored in `decision_tree_results/`. Relative paths of the dataframes
 ### License
 
 ```
+MIT License
 
+Copyright (c) 2024 Manasi Chhibber
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### Acknowledgements
+
+- This repository is built on top of [AASIST repo](https://github.com/clovaai/aasist).
+- The dataset used here is [ASVspoof 2019](https://www.asvspoof.org/index2019.html) [2].
+
+### References
+  
+[1] AASIST: Audio Anti-Spoofing using Integrated Spectro-Temporal Graph Attention Networks
+```bibtex
+@INPROCEEDINGS{Jung2021AASIST,
+  author={Jung, Jee-weon and Heo, Hee-Soo and Tak, Hemlata and Shim, Hye-jin and Chung, Joon Son and Lee, Bong-Jin and Yu, Ha-Jin and Evans, Nicholas},
+  booktitle={arXiv preprint arXiv:2110.01200}, 
+  title={AASIST: Audio Anti-Spoofing using Integrated Spectro-Temporal Graph Attention Networks}, 
+  year={2021}
+```
+
+[2] ASVspoof 2019: A large-scale public database of synthesized, converted and replayed speech
+```bibtex
+@article{wang2020asvspoof,
+  title={ASVspoof 2019: A large-scale public database of synthesized, converted and replayed speech},
+  author={Wang, Xin and Yamagishi, Junichi and Todisco, Massimiliano and Delgado, H{\'e}ctor and Nautsch, Andreas and Evans, Nicholas and Sahidullah, Md and Vestman, Ville and Kinnunen, Tomi and Lee, Kong Aik and others},
+  journal={Computer Speech \& Language},
+  volume={64},
+  pages={101114},
+  year={2020},
+  publisher={Elsevier}
+}
 ```
