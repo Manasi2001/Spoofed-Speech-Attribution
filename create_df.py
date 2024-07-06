@@ -19,6 +19,7 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 
 from fetch_data_function import Dataloader_emb_all, all_info
 from emb_model import emb_fully_1
+from emb_main import attribut_type_index
 
 import configparser
 
@@ -35,30 +36,6 @@ df_org = pd.read_csv(data_file, names=['speaker', 'ID', '-', 'spoof_attack', 'ta
 df = df_org.drop(['speaker', '-'], axis=1)
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
-def attribut_type_index(att_type):
-    if att_type==1:
-        st=0
-        en=2
-    if att_type==2:
-        st=2
-        en=5
-    if att_type==3:
-        st=5
-        en=8
-    if att_type==4:
-        st=8
-        en=13
-    if att_type==5:
-        st=13
-        en=16
-    if att_type==6:
-        st=16
-        en=21
-    if att_type==7:
-        st=21
-        en=25
-    return st,en
 
 # Define the softmax function
 def softmax(x):
