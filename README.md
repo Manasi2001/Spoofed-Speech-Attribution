@@ -49,7 +49,7 @@ python download_dataset.py
 (Alternative) Manual preparation is available via: 
 - ASVspoof2019 dataset: https://datashare.ed.ac.uk/handle/10283/3336
   1. Download `LA.zip` and unzip it.
-  2. Set the dataset directory in the configuration file `config/AASIST.conf`.
+  2. Set the dataset directory in the configuration files in `config/` folder.
 
 ## Phase I
 
