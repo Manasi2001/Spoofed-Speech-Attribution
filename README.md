@@ -6,7 +6,7 @@ This repository focuses on extending the functionality of the ['AASIST: Audio An
 
 **Figure:** Complete implementation workflow of the proposed architecture for explainable spoofed speech detection. **Phase I** demonstrates the extraction of embeddings using the AASIST model and the subsequent processing of these embeddings through a bank of seven probabilistic feature detectors. **Phase II** illustrates the concatenation of the outputs from these detectors to create a 25-dimensional vector, which is then fed into a decision tree model for classification. This decision tree model is used for both bonafide/spoofed classification and spoofing attack algorithm characterization.
 
-### Getting started
+### Getting Started
 
 1. Create a virtual environment using conda (recommended for visualization of decision trees using `graphviz` application).
 
@@ -38,7 +38,7 @@ This repository focuses on extending the functionality of the ['AASIST: Audio An
   pip install -r requirements.txt
   ```
 
-### Data preparation
+### Data Preparation
 
 To download the ASVspoof 2019 logical access dataset [2]:
 
