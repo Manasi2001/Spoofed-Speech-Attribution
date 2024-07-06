@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 import configparser
 
 config = configparser.ConfigParser()
-config.read('emb_model_AASIST.conf')
+config.read('config/emb_model_AASIST.conf')
 
 
 # function for graphing out decision tree
