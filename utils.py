@@ -2,7 +2,6 @@
 Utilization functions
 """
 
-import os
 import random
 import sys
 
