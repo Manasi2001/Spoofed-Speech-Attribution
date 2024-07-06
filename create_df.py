@@ -23,7 +23,7 @@ from emb_model import emb_fully_1
 import configparser
 
 config = configparser.ConfigParser()
-config.read('emb_model_AASIST.conf')
+config.read('config/emb_model_AASIST.conf')
 
 set = config['create_df']['set']
 data_file = str(config['data-path'][set + '_data'])
