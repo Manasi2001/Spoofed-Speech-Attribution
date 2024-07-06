@@ -25,7 +25,7 @@ from utils import create_optimizer
 import configparser
 
 config = configparser.ConfigParser()
-config.read('emb_model_AASIST.conf')
+config.read('config/emb_model_AASIST.conf')
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
