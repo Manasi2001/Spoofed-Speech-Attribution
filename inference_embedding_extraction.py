@@ -11,6 +11,7 @@ from importlib import import_module
 from pathlib import Path
 from typing import Dict, List
 import numpy as np
+from tqdm import tqdm
 
 import torch
 from torch.utils.data import DataLoader
@@ -159,7 +160,7 @@ def produce_evaluation_file(
         trial_lines = f_trl.readlines()
     fname_list = []
     score_list = []
-    for batch_x, utt_id in data_loader:
+    for batch_x, utt_id in tqdm(data_loader, desc="Evaluating", ncols=100):
         batch_x = batch_x.to(device)
         with torch.no_grad():
             _, batch_out = model(batch_x)
@@ -196,7 +197,7 @@ def generate_embeddings(
     
     model.eval()
     embs=torch.tensor([])
-    for batch_x, utt_id in data_loader:
+    for batch_x, utt_id in tqdm(data_loader, desc="Generating Embeddings", ncols=100):
         batch_x=batch_x.to(device)
         with torch.no_grad():
             emb,_=model(batch_x)
@@ -215,13 +216,19 @@ def save_embeddings(
     if not os.path.isdir(emb_path):
         os.mkdir(emb_path)
     
+    print("Start embedding extraction for train set...")
     embs_train=generate_embeddings(trn_loader,model,device)
+    print("Train embeddings generated.")
 
+    print("Start embedding extraction for dev set...")
     embs_dev=generate_embeddings(dev_loader,model,device)
+    print("Dev embeddings generated.")
 
+    print("Start embedding extraction for eval set...")
     embs_eval=generate_embeddings(eval_loader,model,device)
+    print("Eval embeddings generated.")
 
-    #save in files
+    # save in files
     with open(emb_path/"train_emb.npy",'wb') as f:
         np.save(f, embs_train)
 
