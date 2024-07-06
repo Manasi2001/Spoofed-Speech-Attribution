@@ -13,15 +13,11 @@ import numpy as np
 import seaborn as sns
 import itertools
 import argparse
-from sklearn import preprocessing  
-from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-from sklearn import tree
 from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
 
 # libraries required for visualizing the decision tree
 from six import StringIO
-from IPython.display import Image  
 from sklearn.tree import export_graphviz
 import pydotplus
 import matplotlib.pyplot as plt
