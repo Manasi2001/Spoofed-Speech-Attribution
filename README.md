@@ -65,11 +65,11 @@ python inference_embedding_extraction.py
 
 A set of embeddings is available in `Embeddings/AASIST/` for further use. 
 
-### 2. Designing Probabilistic Feature Detectors
+### 2. Training Probabilistic Feature Detectors
 
-The ASVSpoof 2019 dataset provides detailed metadata about the characteristics of each spoofing attack by organizing the spoofing methods into seven _attribute sets_: Input, Input Processor, Duration, Conversion, Speaker Representation, Output, and Waveform Generation. Probabilistic detectors are designed for each of these attribute sets such that they take the 160-dimensional "raw" AASIST embedding as their (shared) input, and are trained against ground truth labels to predict posterior probabilities for assessing the absence or presence of attributes associated with each spoofing attack algorithm.
+The ASVSpoof 2019 dataset provides detailed metadata about the characteristics of each spoofing attack by organizing the spoofing methods into seven _attribute sets_: Input, Input Processor, Duration, Conversion, Speaker Representation, Output, and Waveform Generation. Probabilistic detectors are trained for each of these attribute sets such that they take the 160-dimensional "raw" AASIST embedding as their (shared) input, and are trained against ground truth labels to predict posterior probabilities for assessing the absence or presence of attributes associated with each spoofing attack algorithm.
 
-To design a probabilistic feature detector for an attribute set:
+To train a probabilistic feature detector for an attribute set:
 
 ```
 python emb_main.py
@@ -93,7 +93,7 @@ The dataset (training/development/evaluation), the choice to apply `softmax` or 
 
 ### 2. Decision Tree Modelling
 
-Decision tree models are designed for making use of these 25-dimensional embeddings for two tasks:
+Decision tree models are trained for making use of these 25-dimensional embeddings for two tasks:
 
 - Bonafide versus spoof classification:
 
