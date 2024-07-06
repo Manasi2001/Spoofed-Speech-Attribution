@@ -4,22 +4,16 @@ Script that loads the AASIST model, evaluates it, generates 160-dimensional embe
 """
 
 # importing libraries
-import argparse
 import json
 import os
-import sys
 import warnings
 from importlib import import_module
 from pathlib import Path
-from shutil import copy
-from typing import Dict, List, Union
+from typing import Dict, List
 import numpy as np
 
 import torch
-import torch.nn as nn
 from torch.utils.data import DataLoader
-from torch.utils.tensorboard import SummaryWriter
-from torchcontrib.optim import SWA
 
 from data_utils import (Dataset_ASVspoof2019_train,
                         Dataset_ASVspoof2019_devNeval, genSpoof_list)
