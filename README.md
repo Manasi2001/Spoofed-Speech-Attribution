@@ -10,23 +10,23 @@ This repository focuses on extending the functionality of the ['AASIST: Audio An
 
 1. Create a virtual environment using conda (recommended for visualization of decision trees using `graphviz` application).
 
-   - Download miniconda (https://docs.conda.io/en/latest/miniconda.html)
+   - Download miniconda (https://docs.conda.io/en/latest/miniconda.html).
 
    - Install miniconda by running the downloaded script.
 
-   - Create a new environment (`python=3.10` recommended)
+   - Create a new environment (`python=3.10` recommended):
 
      ```
      conda create -n env_name python=3.10
      ```
 
-   - Install graphviz (the app)
+   - For installing a package:
 
      ```
-     conda install -n env_name graphviz
+     conda install -n env_name <package_name>
      ```
 
-   - Activate the conda environment
+   - Activate the conda environment:
    
      ```
      conda activate env_name
