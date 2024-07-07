@@ -25,6 +25,12 @@ This repository focuses on extending the functionality of the ['AASIST: Audio An
      ```
      conda install -n env_name <package_name>
      ```
+     
+   - For installing `graphviz` executables:
+
+     ```
+     conda install graphviz
+     ```
 
    - Activate the conda environment:
    
@@ -32,7 +38,7 @@ This repository focuses on extending the functionality of the ['AASIST: Audio An
      conda activate env_name
      ```
      
-2. `requirements.txt` must be installed for execution. 
+1. `requirements.txt` must be installed for execution. 
 
   ```
   pip install -r requirements.txt
