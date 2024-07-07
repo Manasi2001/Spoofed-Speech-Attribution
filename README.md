@@ -143,6 +143,7 @@ SOFTWARE.
 
 ### Acknowledgements
 
+- This research has been partially supported by the Academy of Finland (Decision No. 349605, project "SPEECHFAKES"). The author additionally acknowledges CSC – IT Center for Science, Finland, for the use of computational resources.
 - This repository is built on top of [AASIST repo](https://github.com/clovaai/aasist).
 - The dataset used here is [ASVspoof 2019](https://www.asvspoof.org/index2019.html) [2].
 
