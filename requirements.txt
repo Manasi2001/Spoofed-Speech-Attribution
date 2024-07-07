@@ -7,3 +7,4 @@ pydotplus
 pandas
 seaborn
 graphviz
+tqdm
