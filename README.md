@@ -29,7 +29,7 @@ This repository focuses on extending the functionality of the ['AASIST: Audio An
    - For installing `graphviz` executables:
 
      ```
-     conda install graphviz
+     conda install -n env_name graphviz
      ```
 
    - Activate the conda environment:
