@@ -6,7 +6,7 @@ This directory presents the Shapley value visualizations for our paper:
 > *Jagabandhu Mishra, Manasi Chhibber, Hye-jin Shim, Tomi H. Kinnunen*
 > \[Computer Speech & Language, 2025]
 
-## SHAP Plots
+## SHAP-Plots
 
 The SHAP (SHapley Additive exPlanations) plots in this folder illustrate the **relative contribution of each attribute-value** in the **spoofing detection** and **spoofing attack attribution** tasks. The attributes correspond to interpretable components of the speech synthesis or voice conversion pipelines, such as:
 
